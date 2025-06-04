@@ -1,0 +1,22 @@
+{
+  "name": "web-notebook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx tsx watch index"
+  },
+  "keywords": [],
+  "author": "Sidney Malapit",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "handlebars": "^4.7.8",
+    "marked": "^14.0.0"
+  }
+}
