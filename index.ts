@@ -5,10 +5,13 @@ import Handlebars from 'handlebars';
 import { marked } from 'marked'
 import 'dotenv/config'
 
+import notesTree from './notes-tree.ts';
+
 if (typeof process.env.NOTESPATH !== 'string') throw Error('NOTESPATH not set');
 const notesPath = path.normalize(process.env.NOTESPATH);
 
-const template = Handlebars.compile(fs.readFileSync('public/template.hbs', 'utf8'));
+const template = Handlebars.compile(fs.readFileSync('public/.template.hbs', 'utf8'));
+const directoryTemplate = Handlebars.compile(fs.readFileSync('public/.directory.hbs', 'utf8'));
 
 const app = express();
 
@@ -20,7 +23,10 @@ app.use((_, res, next) => {
   next();
 });
 
-app.get('/', (_, res) => res.redirect('/notes/test'));
+app.get('/', (_, res) => { res.send(directoryTemplate({})); });
+
+app.get('/directory-tree', (_, res) => res.json(notesTree));
+
 app.get('/notes/test', (_, res, next) => {
   const filePath = path.join(notesPath, 'test.md');
   res.locals.templateInfo = {
@@ -59,7 +65,7 @@ app.use('/raw', (req, res, next) => {
 });
 
 // renderer, all roads lead here
-app.use((_, res) => {
+app.use((req, res) => {
   const { noteInfo, templateInfo } = res.locals;
 
   if (noteInfo !== null) {

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/raw/{{course}}/assets/">
+  <title>{{name}}</title>
+  <link rel="stylesheet" href="/styles/basic.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/routeros.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+<body>
+  <main id="note-container">{{{body}}}</main>
+  <a id="home-link" href="/">to directory</a>
+  {{#if isNote}}
+  <a id="raw-link" href="/raw/{{filePath}}">view unformatted</a>
+  {{/if}}
+</body>
+</html>

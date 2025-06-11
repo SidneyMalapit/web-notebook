@@ -27,7 +27,6 @@ body {
 
 pre {
   background-color: #ccc;
-  padding: 1rem;
 }
 
 #not-found {
@@ -39,12 +38,26 @@ pre {
   font-weight: 700;
 }
 
-#raw-display {
-  display: none;
+#raw-link {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: #eee;
+  text-decoration: none;
 
-  &.visible {
-    display: initial;
-  }
+  &:hover { text-decoration: underline; }
+}
+
+#home-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  background-color: #eee;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
 }
 
 img {

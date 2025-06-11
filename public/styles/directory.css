@@ -1,0 +1,39 @@
+:root {
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: max-content;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #bbb;
+  min-height: 100vh;
+}
+
+#directory-container {
+  background-color: #ddd;
+  padding: 1.5rem;
+  height: min-content;
+
+  & ul { list-style-type: none; }
+
+  & :is(ul, li) {
+    border-left: 1px dotted black;
+    padding-left: 2ch;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+#directory-root {
+  border-left: none !important;
+}
