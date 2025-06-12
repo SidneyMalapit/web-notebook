@@ -1,5 +1,5 @@
 :root {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Comic Sans MS', 'Comic Sans', sans-serif;
 }
 
 html, body {
@@ -40,8 +40,8 @@ pre {
 
 #raw-link {
   position: fixed;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   padding: 0.5rem;
   background-color: #eee;
   text-decoration: none;
